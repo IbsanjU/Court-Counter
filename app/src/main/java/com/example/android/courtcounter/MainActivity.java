@@ -10,7 +10,8 @@ import android.widget.TextView;
 
 public
 class MainActivity extends AppCompatActivity {
-    int scoreTeamA =0;
+    int scoreTeamA = 0;
+    int scoreTeamB = 0;
 
 
     @Override
@@ -20,6 +21,7 @@ class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         displayForTeamA(0);
+        displayForTeamB(0);
     }
 
     public
@@ -30,20 +32,57 @@ class MainActivity extends AppCompatActivity {
 
     public
     void addThreeForTeamA(View v) {
-        scoreTeamA=scoreTeamA+3;
+        scoreTeamA = scoreTeamA + 3;
         displayForTeamA(scoreTeamA);
     }
+
     public
     void addTwoForTeamA(View v) {
-        scoreTeamA=scoreTeamA+2;
+        scoreTeamA = scoreTeamA + 2;
         displayForTeamA(scoreTeamA);
     }
 
     public
 
     void addOneForTeamA(View v) {
-        scoreTeamA=scoreTeamA+1;
+        scoreTeamA = scoreTeamA + 1;
         displayForTeamA(scoreTeamA);
     }
+
+    //-----------TEAM B-----------
+    public
+    void displayForTeamB(int score) {
+        TextView scoreView = findViewById(R.id.team_b_score);
+        scoreView.setText(String.valueOf(score));
+    }
+
+    public
+    void addThreeForTeamB(View v) {
+        scoreTeamB = scoreTeamB + 3;
+        displayForTeamB(scoreTeamB);
+    }
+
+    public
+    void addTwoForTeamB(View v) {
+        scoreTeamB = scoreTeamB + 2;
+        displayForTeamB(scoreTeamB);
+    }
+
+    public
+
+    void addOneForTeamB(View v) {
+        scoreTeamB = scoreTeamB + 1;
+        displayForTeamB(scoreTeamB);
+    }
+
+    //-----Reset
+    public
+    void resetScores(View v) {
+        scoreTeamA = 0;
+        scoreTeamB = 0;
+        displayForTeamA(scoreTeamA);
+        displayForTeamB(scoreTeamB);
+    }
+
 
 }
